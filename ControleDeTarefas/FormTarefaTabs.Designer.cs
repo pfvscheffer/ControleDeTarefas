@@ -35,6 +35,7 @@
             this.btnGerarRelatorio = new System.Windows.Forms.Button();
             this.btnAbrirRelatorio = new System.Windows.Forms.Button();
             this.txtMensagem = new ControleDeTarefas.CaixaTextoMensagem(this.components);
+            this.tabTarefas = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabJanelaAtual);
             this.tabControl.Controls.Add(this.tabRelatorio);
+            this.tabControl.Controls.Add(this.tabTarefas);
             this.tabControl.Location = new System.Drawing.Point(13, 13);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -100,6 +102,15 @@
             this.txtMensagem.Size = new System.Drawing.Size(345, 20);
             this.txtMensagem.TabIndex = 3;
             // 
+            // tabTarefas
+            // 
+            this.tabTarefas.Location = new System.Drawing.Point(4, 22);
+            this.tabTarefas.Name = "tabTarefas";
+            this.tabTarefas.Size = new System.Drawing.Size(499, 253);
+            this.tabTarefas.TabIndex = 2;
+            this.tabTarefas.Text = "Tarefas";
+            this.tabTarefas.UseVisualStyleBackColor = true;
+            // 
             // FormTarefaTabs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,5 +136,6 @@
         private System.Windows.Forms.Button btnGerarRelatorio;
         private System.Windows.Forms.Button btnAbrirRelatorio;
         private CaixaTextoMensagem txtMensagem;
+        private System.Windows.Forms.TabPage tabTarefas;
     }
 }
