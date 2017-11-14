@@ -11,16 +11,16 @@ using System.Windows.Forms.Design;
 
 namespace ControleDeTarefas
 {
-    [Designer(typeof(ControleRelatorioDesigner))]
-    public partial class ControleRelatorio : UserControl
+    [Designer(typeof(ControleDeTarefasDesigner))]
+    public partial class ControleTarefas : UserControl
     {
-        public ControleRelatorio()
+        public ControleTarefas()
         {
             InitializeComponent();
         }
     }
 
-    public class ControleRelatorioDesigner : ControlDesigner
+    public class ControleDeTarefasDesigner : ControlDesigner
     {
 
     }

@@ -64,6 +64,12 @@
     <Compile Include="ControleRelatorio.Designer.cs">
       <DependentUpon>ControleRelatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControleTarefas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleTarefas.Designer.cs">
+      <DependentUpon>ControleTarefas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControleRelatorio.resx">
       <DependentUpon>ControleRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControleTarefas.resx">
+      <DependentUpon>ControleTarefas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
