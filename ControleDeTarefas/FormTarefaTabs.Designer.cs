@@ -36,9 +36,9 @@
             this.btnGerarRelatorio = new System.Windows.Forms.Button();
             this.btnAbrirRelatorio = new System.Windows.Forms.Button();
             this.txtMensagem = new ControleDeTarefas.CaixaTextoMensagem(this.components);
-            this.controleJanelas1 = new ControleDeTarefas.ControleJanelas();
-            this.controleRelatorio1 = new ControleDeTarefas.ControleRelatorio();
-            this.controleTarefas1 = new ControleDeTarefas.ControleTarefas();
+            this.controleJanelas = new ControleDeTarefas.ControleJanelas();
+            this.controleRelatorio = new ControleDeTarefas.ControleRelatorio();
+            this.controleTarefas = new ControleDeTarefas.ControleTarefas();
             this.tabControl.SuspendLayout();
             this.tabJanelaAtual.SuspendLayout();
             this.tabRelatorio.SuspendLayout();
@@ -61,7 +61,7 @@
             // 
             // tabJanelaAtual
             // 
-            this.tabJanelaAtual.Controls.Add(this.controleJanelas1);
+            this.tabJanelaAtual.Controls.Add(this.controleJanelas);
             this.tabJanelaAtual.Location = new System.Drawing.Point(4, 22);
             this.tabJanelaAtual.Name = "tabJanelaAtual";
             this.tabJanelaAtual.Padding = new System.Windows.Forms.Padding(3);
@@ -72,7 +72,7 @@
             // 
             // tabRelatorio
             // 
-            this.tabRelatorio.Controls.Add(this.controleRelatorio1);
+            this.tabRelatorio.Controls.Add(this.controleRelatorio);
             this.tabRelatorio.Location = new System.Drawing.Point(4, 22);
             this.tabRelatorio.Name = "tabRelatorio";
             this.tabRelatorio.Padding = new System.Windows.Forms.Padding(3);
@@ -83,7 +83,7 @@
             // 
             // tabTarefas
             // 
-            this.tabTarefas.Controls.Add(this.controleTarefas1);
+            this.tabTarefas.Controls.Add(this.controleTarefas);
             this.tabTarefas.Location = new System.Drawing.Point(4, 22);
             this.tabTarefas.Name = "tabTarefas";
             this.tabTarefas.Size = new System.Drawing.Size(499, 287);
@@ -120,35 +120,35 @@
             this.txtMensagem.Size = new System.Drawing.Size(345, 20);
             this.txtMensagem.TabIndex = 3;
             // 
-            // controleJanelas1
+            // controleJanelas
             // 
-            this.controleJanelas1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.controleJanelas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.controleJanelas1.Location = new System.Drawing.Point(7, 7);
-            this.controleJanelas1.Name = "controleJanelas1";
-            this.controleJanelas1.Size = new System.Drawing.Size(486, 274);
-            this.controleJanelas1.TabIndex = 0;
+            this.controleJanelas.Location = new System.Drawing.Point(7, 7);
+            this.controleJanelas.Name = "controleJanelas";
+            this.controleJanelas.Size = new System.Drawing.Size(486, 274);
+            this.controleJanelas.TabIndex = 0;
             // 
-            // controleRelatorio1
+            // controleRelatorio
             // 
-            this.controleRelatorio1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.controleRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.controleRelatorio1.Location = new System.Drawing.Point(4, 7);
-            this.controleRelatorio1.Name = "controleRelatorio1";
-            this.controleRelatorio1.Size = new System.Drawing.Size(489, 274);
-            this.controleRelatorio1.TabIndex = 0;
+            this.controleRelatorio.Location = new System.Drawing.Point(4, 7);
+            this.controleRelatorio.Name = "controleRelatorio";
+            this.controleRelatorio.Size = new System.Drawing.Size(489, 274);
+            this.controleRelatorio.TabIndex = 0;
             // 
-            // controleTarefas1
+            // controleTarefas
             // 
-            this.controleTarefas1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.controleTarefas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.controleTarefas1.Location = new System.Drawing.Point(4, 4);
-            this.controleTarefas1.Name = "controleTarefas1";
-            this.controleTarefas1.Size = new System.Drawing.Size(492, 280);
-            this.controleTarefas1.TabIndex = 0;
+            this.controleTarefas.Location = new System.Drawing.Point(4, 4);
+            this.controleTarefas.Name = "controleTarefas";
+            this.controleTarefas.Size = new System.Drawing.Size(492, 280);
+            this.controleTarefas.TabIndex = 0;
             // 
             // FormTarefaTabs
             // 
@@ -161,6 +161,7 @@
             this.Controls.Add(this.tabControl);
             this.Name = "FormTarefaTabs";
             this.Text = "FormTarefaTabs";
+            this.Load += new System.EventHandler(this.FormTarefaTabs_Load);
             this.tabControl.ResumeLayout(false);
             this.tabJanelaAtual.ResumeLayout(false);
             this.tabRelatorio.ResumeLayout(false);
@@ -179,8 +180,8 @@
         private System.Windows.Forms.Button btnAbrirRelatorio;
         private CaixaTextoMensagem txtMensagem;
         private System.Windows.Forms.TabPage tabTarefas;
-        private ControleJanelas controleJanelas1;
-        private ControleRelatorio controleRelatorio1;
-        private ControleTarefas controleTarefas1;
+        private ControleJanelas controleJanelas;
+        private ControleRelatorio controleRelatorio;
+        private ControleTarefas controleTarefas;
     }
 }

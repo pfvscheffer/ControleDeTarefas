@@ -18,8 +18,20 @@ namespace ControleDeTarefas
         {
             InitializeComponent();
         }
-    }
 
+        internal void AtualizarTextBoxes(string procId, string procName, string windowName)
+        {
+            txtProcId.Text = procId;
+            txtProcName.Text = procName;
+            txtWindowName.Text = windowName;
+        }
+
+        internal void BindDataGridView(BindingSource source)
+        {
+            dgvHistorico.DataSource = source;
+        }
+    }
+    
     public class ControleJanelasDesigner : ControlDesigner
     {
 
