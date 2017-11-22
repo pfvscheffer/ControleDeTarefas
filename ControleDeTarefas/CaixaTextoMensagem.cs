@@ -28,7 +28,10 @@ namespace ControleDeTarefas
 
         public CaixaTextoMensagem(IContainer container)
         {
-            container.Add(this);
+            if (container != null)
+            {
+                container.Add(this);
+            }
 
             InitializeComponent();
         }

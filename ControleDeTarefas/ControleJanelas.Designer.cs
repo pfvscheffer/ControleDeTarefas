@@ -10,7 +10,7 @@
         /// <summary> 
         /// Limpar os recursos que estão sendo usados.
         /// </summary>
-        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        /// <param nome="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -45,7 +45,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Proc ID";
+            this.label1.Text = ResourceStringTable.JanelasLabelProcID;
             // 
             // txtProcId
             // 
@@ -84,7 +84,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Nome Proc";
+            this.label2.Text = ResourceStringTable.JanelasLabelNomeProc;
             // 
             // label3
             // 
@@ -93,7 +93,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Nome Janela";
+            this.label3.Text = ResourceStringTable.JanelasLabelNomeJanela;
             // 
             // dgvHistorico
             // 

@@ -12,11 +12,13 @@ using System.Windows.Forms.Design;
 namespace ControleDeTarefas
 {
     [Designer(typeof(ControleJanelasDesigner))]
-    public partial class ControleJanelas : UserControl
+    internal partial class ControleJanelas : UserControl
     {
-        public ControleJanelas()
+        internal ControleJanelas()
         {
             InitializeComponent();
+            dgvHistorico.AutoGenerateColumns = false;
+            GerarColunas();
         }
 
         internal void AtualizarTextBoxes(string procId, string procName, string windowName)
@@ -26,13 +28,23 @@ namespace ControleDeTarefas
             txtWindowName.Text = windowName;
         }
 
-        internal void BindDataGridView(BindingSource source)
+        internal void BindJanelas(BindingSource source)
         {
             dgvHistorico.DataSource = source;
         }
+
+        private void GerarColunas()
+        {
+            DataGridViewColumn colProcId = Utils.CriarColunaTexto("Proc ID", "colProcId", "ProcID");
+            DataGridViewColumn colProcNome = Utils.CriarColunaTexto("Nome Processo", "colProcNome", "ProcNome");
+            DataGridViewColumn colInicio = Utils.CriarColunaTexto("Início", "colInicio", "Inicio", "hh:mm:ss");
+            DataGridViewColumn colFim = Utils.CriarColunaTexto("Fim", "colFim", "Fim", "hh:mm:ss");
+            
+            dgvHistorico.Columns.AddRange(new DataGridViewColumn [] { colProcId, colProcNome, colInicio, colFim });
+        }
     }
-    
-    public class ControleJanelasDesigner : ControlDesigner
+
+    internal class ControleJanelasDesigner : ControlDesigner
     {
 
     }

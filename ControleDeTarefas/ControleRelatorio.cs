@@ -14,13 +14,29 @@ namespace ControleDeTarefas
     [Designer(typeof(ControleRelatorioDesigner))]
     public partial class ControleRelatorio : UserControl
     {
-        public ControleRelatorio()
+        internal ControleRelatorio()
         {
             InitializeComponent();
+            dgvRelatorio.AutoGenerateColumns = false;
+            GerarColunas();
+        }
+
+        internal void BindProcessos(BindingSource sourceProcessos)
+        {
+            dgvRelatorio.DataSource = sourceProcessos;
+        }
+
+        private void GerarColunas()
+        {
+            DataGridViewColumn colProcId = Utils.CriarColunaTexto("Proc ID", "colProcId", "ProcId");
+            DataGridViewColumn colProcNome = Utils.CriarColunaTexto("Nome Processo", "colProcNome", "Nome");
+            DataGridViewColumn colDuracao = Utils.CriarColunaTexto("Duração", "colDuracao", "Duracao", "hh\\:mm\\:ss");
+
+            dgvRelatorio.Columns.AddRange(new DataGridViewColumn[] { colProcId, colProcNome, colDuracao });
         }
     }
 
-    public class ControleRelatorioDesigner : ControlDesigner
+    internal class ControleRelatorioDesigner : ControlDesigner
     {
 
     }
