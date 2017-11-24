@@ -26,6 +26,11 @@ namespace ControleDeTarefas
             dgvRelatorio.DataSource = sourceProcessos;
         }
 
+        internal void AtualizarGrid(object o, EventArgs ea)
+        {
+            dgvRelatorio.Refresh();
+        }
+
         private void GerarColunas()
         {
             DataGridViewColumn colProcId = Utils.CriarColunaTexto("Proc ID", "colProcId", "ProcId");

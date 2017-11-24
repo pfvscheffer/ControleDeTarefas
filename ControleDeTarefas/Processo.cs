@@ -15,9 +15,9 @@ namespace ControleDeTarefas
         private TimeSpan duracao;
 
         internal List<Janela> Janelas { get { return this.janelas; } }
-        internal int ProcId { get { return this.procId; } }
-        internal string Nome { get { return this.name; } }
-        internal TimeSpan Duracao { get { return this.duracao; } }
+        public int ProcId { get { return this.procId; } }
+        public string Nome { get { return this.name; } }
+        public TimeSpan Duracao { get { return this.duracao; } }
 
         internal Processo (uint pid)
         {
@@ -52,7 +52,7 @@ namespace ControleDeTarefas
             TimeSpan ts = new TimeSpan(0);
             foreach (Janela j in this.janelas)
             {
-                ts.Add(j.CalcularDuracao());
+                ts += j.CalcularDuracao();
             }
             this.duracao = ts;
             return ts;

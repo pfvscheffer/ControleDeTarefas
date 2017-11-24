@@ -19,7 +19,7 @@ namespace ControleDeTarefas
         private InstanteJanela instanteAtual;
         private BindingSource sourceInstantes;
         private BindingSource sourceProcessos;
-        private EventHandler relatorioHandler;
+        private EventHandler calculoRelatorioHandler;
         Timer timer;
 
         public FormTarefaTabs()
@@ -41,7 +41,8 @@ namespace ControleDeTarefas
             controleJanelas.BindJanelas(sourceInstantes);
             controleRelatorio.BindProcessos(sourceProcessos);
 
-            relatorioHandler = new EventHandler(processos.CalcularDuracoes);
+            calculoRelatorioHandler = new EventHandler(processos.CalcularDuracoes);
+            calculoRelatorioHandler += controleRelatorio.AtualizarGrid;
 
             timer = new Timer() { Interval = 1000 };
             timer.Tick += new EventHandler(AtualizarJanela);
@@ -66,11 +67,11 @@ namespace ControleDeTarefas
         {
             if (tabControl.SelectedTab == tabRelatorio)
             {
-                timer.Tick += relatorioHandler;
+                timer.Tick += calculoRelatorioHandler;
             }
             else
             {
-                timer.Tick -= relatorioHandler;
+                timer.Tick -= calculoRelatorioHandler;
             }
         }
     }
